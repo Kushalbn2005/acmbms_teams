@@ -17,7 +17,7 @@ const AnimateOnScroll = ({ children, delay = 0 }) => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1.2,
+        duration: 1.8,
         delay,
         ease: 'easeOut',
       },
