@@ -30,7 +30,7 @@ const subtitleVariants = {
 };
 
 const faculty = [
-  { name: 'Dr. Suresh Kumar', role: 'Faculty Advisor', image: './src/assets/pic1.png',linkedin:'https://www.linkedin.com/in/kushal-b-n-1404002b4/',github: 'https://github.com/Kushalbn2005' },
+  { name: 'Dr. Suresh Kumar', role: 'Faculty Advisor', image: '', linkedin: 'https://www.linkedin.com/in/kushal-b-n-1404002b4/', github: 'https://github.com/Kushalbn2005' },
   { name: 'Dr. Priya Singh', role: 'Co-Advisor', image: '' },
   { name: 'Dr. Arun Patel', role: 'Mentor', image: '' },
 ];
@@ -41,15 +41,13 @@ const sponsor = [
 ];
 
 const cardVariants = {
-  hidden: { opacity: 0, scale: 0.6, rotate: -20, y: 100 },
+  hidden: { opacity: 0, y: 60 },
   visible: (i) => ({
     opacity: 1,
-    scale: 1,
-    rotate: 0,
     y: 0,
     transition: {
-      delay: i * 0.35,
-      duration: 2.1,
+      delay: i * 0.18,
+      duration: 1.2,
       ease: [0.22, 1, 0.36, 1],
     },
   }),
@@ -70,13 +68,13 @@ const FacultyAndSponsor = () => {
           >
             Faculty Advisor & Sponsor
           </motion.h2>
-          
+
           <motion.p
             variants={subtitleVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.7 }}
-            className="mt-4 text-lg md:text-xl font-bellefair text-gray-300 max-w-2xl mx-auto"
+            className="mt-4 text-lg md:text-xl font-montserrat text-gray-300 max-w-2xl mx-auto"
           >
             Academic leadership guiding our chapter's mission and vision
           </motion.p>
@@ -94,7 +92,7 @@ const FacultyAndSponsor = () => {
               viewport={{ once: true, amount: 0.2 }}
               variants={cardVariants}
               whileHover={{ scale: 1.04, boxShadow: '0 8px 32px 0 rgba(80,80,180,0.18)' }}
-              transition={{ type: 'tween' }}
+              transition={{ type: 'tween', duration: 0.25 }}
             >
               <ProfileCard
                 name={member.name}
@@ -106,6 +104,7 @@ const FacultyAndSponsor = () => {
                 showUserInfo={false}
                 linkedinUrl={member.linkedin}
                 githubUrl={member.github}
+                enableTilt={true}
               />
             </motion.div>
           ))}

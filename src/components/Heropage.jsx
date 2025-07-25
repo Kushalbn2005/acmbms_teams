@@ -14,7 +14,7 @@ const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="w-full min-h-screen bg-[#110F03] flex items-center justify-center px-6 text-center text-white sticky top-0 z-10"
+      className="w-full min-h-screen  flex items-center justify-center px-6 text-center text-white sticky top-0 z-10"
     >
       <motion.div
         className="max-w-6xl"

@@ -39,15 +39,13 @@ const advisors = [
 ];
 
 const cardVariants = {
-  hidden: { opacity: 0, scale: 0.7, rotate: -10, y: 60 },
+  hidden: { opacity: 0, y: 60 },
   visible: (i) => ({
     opacity: 1,
-    scale: 1,
-    rotate: 0,
     y: 0,
     transition: {
       delay: i * 0.18,
-      duration: 1.8,
+      duration: 1.2,
       ease: [0.22, 1, 0.36, 1],
     },
   }),
@@ -72,7 +70,7 @@ const StudentAdvisor = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.7 }}
-            className="mt-6 text-lg md:text-xl font-bellefair text-gray-300 max-w-2xl mx-auto"
+            className="mt-6 text-lg md:text-xl font-montessart text-gray-300 max-w-2xl mx-auto"
           >
             Graduate students and alumni providing mentorship and industry connections
           </motion.p>
@@ -90,7 +88,7 @@ const StudentAdvisor = () => {
               viewport={{ once: true, amount: 0.2 }}
               variants={cardVariants}
               whileHover={{ scale: 1.04, boxShadow: '0 8px 32px 0 rgba(80,80,180,0.18)' }}
-              transition={{ type: 'tween' }}
+              transition={{ type: 'tween', duration: 0.25 }}
             >
               <ProfileCard
                 name={member.name}
@@ -102,6 +100,7 @@ const StudentAdvisor = () => {
                 showUserInfo={false}
                 linkedinUrl="https://linkedin.com/in/yourprofile"
                 githubUrl="https://github.com/yourprofile"
+                enableTilt={true}
               />
             </motion.div>
           ))}
